@@ -5,7 +5,7 @@ export REGION=eu-west-1
 export AWS_DEFAULT_REGION=${REGION}
 
 export SERVICE=$(cat $CWD/package.json | jq -r '.name')
-export NAME="snoop"
+export NAME="health"
 export STAGE=$BUILD_STAGE
 
 export TF_VAR_STAGE=${STAGE}
