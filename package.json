@@ -1,0 +1,7 @@
+{
+  "name": "aws-s3-crud",
+  "description": "technical assessment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "vicentemanzano6@hotmail.es"
+}
