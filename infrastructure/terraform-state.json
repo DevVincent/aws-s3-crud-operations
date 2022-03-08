@@ -1,1 +1,54 @@
-{}
+{
+  "health_data__bucket": {
+    "acceleration_status": "",
+    "acl": "private",
+    "arn": "arn:aws:s3:::health-data20220308185747424300000002",
+    "bucket": "health-data20220308185747424300000002",
+    "bucket_domain_name": "health-data20220308185747424300000002.s3.amazonaws.com",
+    "bucket_prefix": "health-data",
+    "bucket_regional_domain_name": "health-data20220308185747424300000002.s3.eu-west-1.amazonaws.com",
+    "cors_rule": [],
+    "force_destroy": false,
+    "grant": [],
+    "hosted_zone_id": "Z1BKCTXD74EZPE",
+    "id": "health-data20220308185747424300000002",
+    "lifecycle_rule": [],
+    "logging": [
+      {
+        "target_bucket": "health-data20220308185747424300000001",
+        "target_prefix": "log/"
+      }
+    ],
+    "object_lock_configuration": [],
+    "policy": "",
+    "region": "eu-west-1",
+    "replication_configuration": [],
+    "request_payer": "BucketOwner",
+    "server_side_encryption_configuration": [],
+    "tags": {
+      "Service": "health",
+      "Stage": "production"
+    },
+    "tags_all": {
+      "Service": "health",
+      "Stage": "production"
+    },
+    "versioning": [
+      {
+        "enabled": false,
+        "mfa_delete": false
+      }
+    ],
+    "website": [],
+    "website_domain": null,
+    "website_endpoint": null
+  },
+  "kms_key_alias_arn": "arn:aws:kms:eu-west-1:914068444664:alias/health-s3-kms-key",
+  "kms_key_alias_name": "alias/health-s3-kms-key",
+  "kms_key_arn": "arn:aws:kms:eu-west-1:914068444664:key/4072bded-99e6-4a87-bfe5-3a38f7078953",
+  "kms_key_id": "4072bded-99e6-4a87-bfe5-3a38f7078953",
+  "tags": {
+    "Service": "health",
+    "Stage": "production"
+  }
+}

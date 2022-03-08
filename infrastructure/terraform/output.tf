@@ -1,5 +1,5 @@
 output "health_data__bucket" {
-    value = aws_s3_bucket.health-data
+    value = aws_s3_bucket.health_data
 }
 
 output "kms_key_arn" {

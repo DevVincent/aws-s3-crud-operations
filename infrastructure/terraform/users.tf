@@ -24,7 +24,10 @@ resource "aws_iam_policy" "iam_policy" {
             },
             {
             "Effect": "Allow",
-            "Action": "cloudwatch:*",
+            "Action": [
+                "cloudwatch:GetDashboard",
+                "cloudwatch:ListDashboards",
+            ],
             "Resource": "*"
             }
         ]
