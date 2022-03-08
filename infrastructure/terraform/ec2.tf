@@ -1,31 +1,34 @@
-# data "aws_ami" "ubuntu" {
-#   most_recent = true
+data "aws_ami" "amazon-linux-2" {
+ most_recent = true
 
-#   filter {
-#     name   = "name"
-#     values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-#   }
 
-#   filter {
-#     name   = "virtualization-type"
-#     values = ["hvm"]
-#   }
+ filter {
+   name   = "owner-alias"
+   values = ["amazon"]
+ }
 
-#   owners   = ["099720109477"] # Canonical
 
-#   tags     = local.common_tags
-# }
+ filter {
+   name   = "name"
+   values = ["amzn2-ami-hvm*"]
+ }
+ 
+ owners = ["amazon"]
+}
 
-# resource "aws_instance" "bastion_host" {
-#   ami           = data.aws_ami.ubuntu.id
-#   instance_type = "t2.micro"
+locals {
+  userdata = templatefile("user_data.sh", {
+    ssm_cloudwatch_config = aws_ssm_parameter.cw_agent.name
+  })
+}
 
-#   user_data     = <<-EOL
-#   #!/bin/bash -xe
+resource "aws_instance" "bastion_host" {
+  ami                  = "${data.aws_ami.amazon-linux-2.id}"
+  instance_type        = "t3.micro"
+  subnet_id            = aws_subnet.private_subnet.id
+  iam_instance_profile = aws_iam_instance_profile.this.name
 
-#   apt update
-#   echo "installing stuff"
-#   EOL
+  user_data            = local.userdata
 
-#   tags          = local.common_tags
-# }
+  tags                 = local.common_tags
+}

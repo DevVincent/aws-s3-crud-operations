@@ -13,13 +13,11 @@ resource "aws_sns_topic" "s3_topic" {
             "Service": "s3.amazonaws.com"
             },
         "Action": "SNS:Publish",
-        "Resource": "*",
-        "Condition":{
-            "ArnLike":{"aws:SourceArn":"${aws_s3_bucket.health_data.arn}"}
-        }
+        "Resource": "*"
     }]
 }
 POLICY
+  tags   = local.common_tags
 }
 
 resource "aws_sns_topic_subscription" "s3_topic_email_subscription" {

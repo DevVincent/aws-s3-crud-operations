@@ -21,3 +21,15 @@ variable USER {
     "oliver"
   ]
 }
+
+variable MAIN_VPC_CIDR {
+  default = "10.0.0.0/24"
+}
+
+variable PUBLIC_SUBNET {
+  default = "10.0.0.128/26"
+}
+
+variable PRIVATE_SUBNET {
+  default = "10.0.0.192/26"
+}
