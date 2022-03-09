@@ -5,6 +5,7 @@ function doVars {
 }
 
 function terraformInit {
+  echo 'hello'
   terraform -chdir=${CWD}/infrastructure/terraform init \
   -backend-config="bucket=${S3_TERRAFORM_STATE_BUCKET}" \
   -backend-config="key=${S3_TERRAFORM_STATE_KEY_PREFIX}/terraform.tfstate" \
@@ -15,6 +16,7 @@ function planTerraform {
   rm -f ${CWD}/.terraform/terraform.tfstate
 
   terraformInit
+  echo 'done this'
 
   terraform -chdir=${CWD}/infrastructure/terraform plan
   terraform -chdir=${CWD}/infrastructure/terraform output -json | jq 'with_entries(.value |= .value)' > ${CWD}/infrastructure/terraform-state.json

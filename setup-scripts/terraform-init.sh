@@ -7,7 +7,7 @@ function doVars {
 function terraformInit {
   terraform -chdir=${CWD}/infrastructure/terraform init \
   -backend-config="bucket=devvincent-dev-terraform-state" \
-  -backend-config="key=eu-west-1/aws-csv-to-json/production/terraform.tfstate" \
+  -backend-config="key=eu-west-1/aws-s3-crud/production/terraform/terraform.tfstate" \
   -backend-config="region=eu-west-1"
 
   if [[ $? == 1 ]]; then echo "Terraform init failed, exit code 1" && exit 1; fi

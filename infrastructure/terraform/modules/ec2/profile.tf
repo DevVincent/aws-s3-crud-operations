@@ -47,6 +47,13 @@ resource "aws_iam_role_policy" "this" {
                 "s3:GetEncryptionConfiguration"
             ],
             "Resource": "*"
+        }, 
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kms:Decrypt"
+            ],
+            "Resource": "*"
         }
       ]
     }

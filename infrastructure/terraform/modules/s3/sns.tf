@@ -17,7 +17,7 @@ resource "aws_sns_topic" "s3_topic" {
     }]
 }
 POLICY
-  tags   = local.common_tags
+  tags   = var.TAGS
 }
 
 resource "aws_sns_topic_subscription" "s3_topic_email_subscription" {

@@ -2,7 +2,14 @@ resource "aws_kms_key" "kms_s3_key" {
   description = "kms key for s3"
   deletion_window_in_days = 7
 
-  tags = local.common_tags
+  tags = var.TAGS
+}
+
+resource "aws_kms_key" "kms_ssm_key" {
+  description = "kms key for ssm"
+  deletion_window_in_days = 7
+
+  tags = var.TAGS
 }
 
 resource "aws_kms_alias" "kms_key_alias" {
