@@ -27,9 +27,18 @@ resource "aws_iam_policy" "iam_policy" {
             "Action": [
                 "cloudwatch:GetDashboard",
                 "cloudwatch:ListDashboards",
+                "cloudwatch:GetMetricData"
             ],
             "Resource": "*"
-            }
+            },
+            {
+            "Action": [
+                "ssm:*"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+            },
+
         ]
         }
     )

@@ -4,8 +4,18 @@ resource "aws_security_group" "instance_group" {
   vpc_id      = data.aws_vpc.network.id
 }
 
-resource "aws_security_group_rule" "example" {
+resource "aws_security_group_rule" "ingress_ssh" {
   type              = "ingress"
+  from_port         = 22
+  to_port           = 22
+  protocol          = "tcp"
+  cidr_blocks       = ["109.74.247.220/32"]
+  security_group_id = aws_security_group.instance_group.id
+  description       = "INGRESS - SSH access to the AWS instance for CRUD operations from certain IPs"
+}
+
+resource "aws_security_group_rule" "egress_ssh" {
+  type              = "egress"
   from_port         = 22
   to_port           = 22
   protocol          = "tcp"

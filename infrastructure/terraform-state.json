@@ -1,4 +1,5 @@
 {
+  "pub_key_ssh": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7LKHwdXeB8HQfcTxgZE7rHi5rg7v5GCvVbsJFj7iyp5H+FHxbsY2uQNlxNUGDvTT5Vr4gUzibpAeiUu5N7M+pPP65yBWzj3znwdBYZH5Gr4QWxHJyw0F2RKDcfsa4XkIOOnz+DYJ0ONSEunwroDESCDwwJuPRLMaPCQW39Fn7U2PbeWN2FFr727y9r9uUuQBimB4HMVOQqkM+lxyQCpJ+iPWBYuxJtcDnzeGe4r3uSI2HrFQCrfYhjcoHBqmPX9AvVboDYzYCIkhNI5gMmlM4wFVvx9JDK/2CIXyss6rg6iqL1TnZPwpfv8TTrnRtUjyKg5vK9raJEtTHxG0cu7ZR\n",
   "tags": {
     "Service": "health",
     "Stage": "production"

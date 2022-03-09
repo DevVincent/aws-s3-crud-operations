@@ -15,7 +15,7 @@ resource "aws_cloudwatch_dashboard" "health_data" {
           [
             "AWS/S3",
             "PutBucketNotification",
-            "BucketId",
+            "BucketName",
             "${var.BUCKET_ID}"
           ]
         ],
@@ -36,7 +36,7 @@ resource "aws_cloudwatch_dashboard" "health_data" {
           [
             "AWS/S3",
             "NumberOfObjects",
-            "BucketId",
+            "BucketName",
             "${var.BUCKET_ID}"
           ]
         ],
