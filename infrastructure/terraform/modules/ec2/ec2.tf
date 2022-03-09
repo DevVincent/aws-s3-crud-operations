@@ -25,12 +25,12 @@ data "aws_ami" "amazon_linux_2" {
 resource "aws_instance" "bastion_host" {
   ami                    = data.aws_ami.amazon_linux_2.id
   instance_type          = "t3.micro"
-  iam_instance_profile    = aws_iam_instance_profile.this.name
+  iam_instance_profile   = aws_iam_instance_profile.this.name
   user_data              = local.userdata
   key_name               = aws_key_pair.instance_key.id
 
   tags                   = merge({ Name: "${var.SERVICE}-s3-crud" }, var.TAGS)
-  # vpc_security_group_ids = [var.SECURITY_GROUP_ID]
+  security_groups        = [var.SECURITY_GROUP_ID]
 }
 
 resource "aws_key_pair" "instance_key" {
