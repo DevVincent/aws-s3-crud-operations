@@ -2,7 +2,9 @@ module cloudwatch {
   source = "./modules/cloudwatch"
 
   SERVICE = var.SERVICE
+  REGION  = var.REGION
   TAGS    = local.common_tags
 
-  instance_id = module.ec2.instance_id
+  INSTANCE_ID = module.ec2.instance_id
+  BUCKET_ID   = module.s3.bucket_id
 }

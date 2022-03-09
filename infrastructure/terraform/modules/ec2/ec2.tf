@@ -26,7 +26,7 @@ resource "aws_instance" "bastion_host" {
   ami                    = data.aws_ami.amazon_linux_2.id
   instance_type          = "t3.micro"
   iam_instance_profile    = aws_iam_instance_profile.this.name
-  vpc_security_group_ids = [var.SECURITY_GROUP_ID]
+  # vpc_security_group_ids = [var.SECURITY_GROUP_ID]
   user_data              = local.userdata
 
   tags                   = merge({ Name: "${var.SERVICE}-s3-crud" }, var.TAGS)
