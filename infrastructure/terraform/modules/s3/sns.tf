@@ -1,5 +1,10 @@
 locals {
-  emails = ["vicentemanzano6@hotmail.es"]
+  emails = [
+    "vicentemanzano6@hotmail.es", 
+    "sam.madeley@pshealthgroup.com",
+    "ryan.megarity@pshealthgroup.com",
+    "oliver.kelly@pshealthgroup.com"
+  ]
 }
 
 resource "aws_sns_topic" "s3_topic" {

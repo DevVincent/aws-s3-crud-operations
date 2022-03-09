@@ -1,12 +1,13 @@
 # aws-s3-crud-operations
 
-Infrastructure used to deploy a simple service in the AWS cloud to receive csv files and
-send them as json files into an s3 bucket thanks to the following services:
+Infrastructure used to deploy an ec2 instance to perform crud operations with s3. IAM users are available to access the cloudwatch dashboards and the instance either by ssm session manager or ssh.
 
 - S3
-- Lambda
+- EC2
 - KMS
 - IAM
-- Cloudwatch Alarms
-# Architecture Diagram
+- CloudWatch
+- VPC
+- SNS
 
+# Architecture Diagram
