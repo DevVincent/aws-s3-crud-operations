@@ -38,3 +38,8 @@ resource "aws_s3_bucket_notification" "sns_trigger" {
     aws_s3_bucket.health_data
   ]
 }
+
+resource "aws_s3_bucket_metric" "health_data_entire_bucket" {
+  bucket = aws_s3_bucket.health_data.bucket
+  name   = "EntireBucket"
+}

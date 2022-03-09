@@ -13,10 +13,16 @@ resource "aws_cloudwatch_dashboard" "health_data" {
       "properties": {
         "metrics": [
           [
-            "AWS/S3",
+            "AWS/Usage",
+            "CallCount",
+            "Type",
+            "API",
+            "Resource",
             "PutBucketNotification",
-            "BucketName",
-            "${var.BUCKET_ID}"
+            "Service",
+            "S3",
+            "Class",
+            "None"
           ]
         ],
         "period": 300,
