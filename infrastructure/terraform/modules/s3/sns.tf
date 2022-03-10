@@ -1,10 +1,6 @@
 locals {
   emails = [
-    "vicentemanzano6@hotmail.es", 
-    "vicente.manzano@firemind.io",
-    "sam.madeley@pshealthgroup.com",
-    "ryan.megarity@pshealthgroup.com",
-    "oliver.kelly@pshealthgroup.com"
+    "vicentemanzano6@hotmail.es"
   ]
 }
 

@@ -33,11 +33,8 @@ resource "aws_iam_policy" "iam_policy" {
             },
             {
             "Action": [
-                "ssmmessages:CreateControlChannel",
-                "ssmmessages:CreateDataChannel",
-                "ssmmessages:OpenControlChannel",
-                "ssmmessages:OpenDataChannel", 
-                "ssm:GetConnectionStatus" 
+                "ssmmessages:*",
+                "ssm:*" 
             ],
             "Effect": "Allow",
             "Resource": "*"
